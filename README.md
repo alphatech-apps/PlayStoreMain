@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/alphatech-apps/PlayStoreMain.svg)](https://jitpack.io/#alphatech-apps/PlayStoreMain)
+
 How to
 To get a Git project into your build:
 
