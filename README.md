@@ -1,3 +1,6 @@
+[![](https://jitpack.io/v/alphatech-apps/PlayStoreMain.svg)](https://jitpack.io/#alphatech-apps/PlayStoreMain)
+
+
 How to To get a Git project into your build:
 
 Step 1. Add the JitPack repository to your build file
@@ -13,13 +16,10 @@ dependencyResolutionManagement {
 }
 Step 2. Add the dependency
 
-[![](https://jitpack.io/v/alphatech-apps/PlayStoreMain.svg)](https://jitpack.io/#alphatech-apps/PlayStoreMain)
-
 dependencies {
 	        implementation 'com.github.alphatech-apps:PlayStoreMain:Tag'
 }
 Step 3. add on Remote class
-
 
 public class DoRemoteJob {
     Context context;
