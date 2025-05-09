@@ -12,6 +12,7 @@ dependencyResolutionManagement {
 	}
 }
 Step 2. Add the dependency
+
 [![](https://jitpack.io/v/alphatech-apps/PlayStoreMain.svg)](https://jitpack.io/#alphatech-apps/PlayStoreMain)
 
 dependencies {
