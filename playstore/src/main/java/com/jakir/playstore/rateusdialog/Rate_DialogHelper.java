@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.jakir.playstore.rateusdialog.extraclass.CheckInternet;
+import com.jakir.playstore.tryourapps.AppOpenUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -19,18 +20,14 @@ public class Rate_DialogHelper {
     private static final String LAST_SHOWN_DATE = "last_shown_date";
     private static final String REMIND_ME_LATER_DATE = "remind_me_later_date";
 
-    public static boolean shouldShowRateDialog(Context context, int friday) {
-        SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        String lastShownDate = prefs.getString(LAST_SHOWN_DATE, "");
-        String remindMeLaterDate = prefs.getString(REMIND_ME_LATER_DATE, "");
-        String todayDate = getTodayDate();
-
-        // Check if today is the "Remind Me Later" date
-        if (todayDate.equals(remindMeLaterDate)) {
+    public static boolean shouldShowRateDialog(Context context, int openCountWant) {
+         /*   int openCount = Util.getCountAppOpen(activity);
+      if (openCount % 5 == 0 && new CheckInternet().isConnected(activity) {
             return true;
-        }
-        // Check if today is Friday and hasn't been shown already
-        return isFriday(friday) && !todayDate.equals(lastShownDate) && new CheckInternet().isConnected(context);
+        } else return false;
+        */
+        return AppOpenUtil.getCountAppOpen(context) % openCountWant == 0 && new CheckInternet().isConnected(context);
+
     }
 
     public static void saveRateDialogShown(Context context) {

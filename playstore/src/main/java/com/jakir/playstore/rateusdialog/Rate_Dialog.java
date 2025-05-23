@@ -84,7 +84,7 @@ public class Rate_Dialog extends Dialog {
         });
         TextView btnRemindLater = findViewById(R.id.btnRemindLater);
         btnRemindLater.setOnClickListener(view2 -> {
-            Rate_DialogHelper.saveRemindMeLater(context); // Save remind me later date
+//            Rate_DialogHelper.saveRemindMeLater(context); // Save remind me later date
             dismiss();
         });
 

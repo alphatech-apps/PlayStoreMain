@@ -110,7 +110,7 @@ public class TryOurAppListDatabase extends SQLiteOpenHelper {
             Toast.makeText(context, "Database backup completed successfully", Toast.LENGTH_SHORT).show();
             return true;
         } catch (IOException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             Toast.makeText(context, "Failed to backup database", Toast.LENGTH_SHORT).show();
             return false;
         }

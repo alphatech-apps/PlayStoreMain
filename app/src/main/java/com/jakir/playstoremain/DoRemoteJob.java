@@ -32,6 +32,6 @@ public class DoRemoteJob {
     }
 
     private void PlayStore_RateUs(Context context) {
-        new PlayStore_RateUs(context, Calendar.FRIDAY);
+        new PlayStore_RateUs(context, 22);
     }
 }

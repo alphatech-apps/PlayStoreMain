@@ -37,7 +37,7 @@ public class AppUpdateHelper {
                             REQUEST_CODE_UPDATE
                     );
                 } catch (IntentSender.SendIntentException e) {
-                    e.printStackTrace();
+//                    e.printStackTrace();
                 }
             }
         });

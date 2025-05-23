@@ -35,7 +35,7 @@ public class TryOurAppHelper {
             TryOurAppsBottomSheet bottomSheet = new TryOurAppsBottomSheet(appList);
             bottomSheet.show(activity.getSupportFragmentManager(), bottomSheet.getTag());
         } else {
-            Log.d("showTryOurAppsDialog", "showTryOurAppsDialog is faild: appList.isEmpty");
+//            Log.d("showTryOurAppsDialog", "showTryOurAppsDialog is faild: appList.isEmpty");
 //            Toast.makeText(activity, "appList.isEmpty", Toast.LENGTH_SHORT).show();
         }
 
@@ -75,7 +75,7 @@ public class TryOurAppHelper {
                 }
 
             } catch (IOException e) {
-                e.printStackTrace();
+//                e.printStackTrace();
             }
         }).start();
     }

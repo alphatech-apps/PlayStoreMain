@@ -4,14 +4,15 @@ import android.content.Context;
 
 import com.jakir.playstore.rateusdialog.Rate_Dialog;
 import com.jakir.playstore.rateusdialog.Rate_DialogHelper;
+import com.jakir.playstore.tryourapps.AppOpenUtil;
 
 //
 // Created by JAKIR HOSSAIN on 4/11/2025.
 //
 public class PlayStore_RateUs {
-    public PlayStore_RateUs(Context context, int day) {
+    public PlayStore_RateUs(Context context, int openCountWant) {
         // Check if the rate dialog should be shown
-        if (Rate_DialogHelper.shouldShowRateDialog(context, day)) {
+        if (Rate_DialogHelper.shouldShowRateDialog(context, openCountWant)) {
             showRateDialog(context);
         }
     }
@@ -20,6 +21,6 @@ public class PlayStore_RateUs {
         Rate_Dialog rate_dialog = new Rate_Dialog(context);
         rate_dialog.show();
 
-        Rate_DialogHelper.saveRateDialogShown(context); // Save that the dialog was shown
+        AppOpenUtil.countAppOpen(context); // increese 1 for avoid again show dialog
     }
 }
