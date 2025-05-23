@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
-            android:layout_width="65dp"
+            android:layout_width="40dp"
             android:layout_height="5dp"
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
@@ -31,11 +31,10 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/TextAppearance.AppCompat.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:gravity="center_vertical"
-                android:text="Try our other Apps!"
+                android:text="@string/try_our_other_apps_from_play_store"
                 android:textStyle="bold" />
         </LinearLayout>
 
