@@ -18,7 +18,7 @@ Add it in your root settings.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.alphatech-apps:PlayStoreMain:Tag'
+	        implementation 'com.github.alphatech-apps:PlayStoreMain:1.0.1'
 	}
 
  Step 3. add on Remote class
