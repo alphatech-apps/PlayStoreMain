@@ -18,13 +18,13 @@ Add it in your root settings.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.alphatech-apps:PlayStoreMain:1.0.2'
+	        implementation 'com.github.alphatech-apps:PlayStoreMain:1.0.3'
 	}
 
  Step 3. add on Remote class
 
  
-public class DoRemoteJob {
+public.class.DoRemoteJob {
     Context context;
 
     public DoRemoteJob(Context context) {
