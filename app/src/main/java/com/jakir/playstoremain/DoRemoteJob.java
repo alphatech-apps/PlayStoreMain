@@ -6,8 +6,6 @@ import com.jakir.playstore.PlayStore_RateUs;
 import com.jakir.playstore.PlayStore_TryOurApps;
 import com.jakir.playstore.PlayStore_Update;
 
-import java.util.Calendar;
-
 //
 // Created by JAKIR HOSSAIN on 3/16/2025.
 //
@@ -32,6 +30,6 @@ public class DoRemoteJob {
     }
 
     private void PlayStore_RateUs(Context context) {
-        new PlayStore_RateUs(context, 22);
+        new PlayStore_RateUs(context, 6, true); // true = Material, false = Custom
     }
 }

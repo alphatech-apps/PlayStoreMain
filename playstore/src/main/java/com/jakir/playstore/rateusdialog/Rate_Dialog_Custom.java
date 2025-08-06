@@ -16,11 +16,11 @@ import android.widget.TextView;
 import com.jakir.playstore.R;
 
 
-public class Rate_Dialog extends Dialog {
+public class Rate_Dialog_Custom extends Dialog {
 
     Context context;
 
-    public Rate_Dialog(Context context) {
+    public Rate_Dialog_Custom(Context context) {
         super(context);
         this.context = context;
     }
@@ -32,7 +32,7 @@ public class Rate_Dialog extends Dialog {
         getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 //        getWindow().getAttributes().windowAnimations = R.style.DialogAnimation_slide_in_down; //dialog animation
 
-        setContentView(R.layout.rate_us_dialog);
+        setContentView(R.layout.rate_us_dialog_custom);
 
         ImageView s1 = findViewById(R.id.star01);
         ImageView s2 = findViewById(R.id.star02);
