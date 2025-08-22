@@ -51,14 +51,14 @@
 
     <ImageView
         android:id="@+id/close"
-        android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="0dp"
         android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/bottomsheet_close_bg"
+        android:padding="5dp"
         android:src="@drawable/round_close_24"
-        android:background="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/lin" />
 

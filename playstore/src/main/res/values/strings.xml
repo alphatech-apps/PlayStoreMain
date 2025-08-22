@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="remind_me_later">Remind me later</string>
-    <string name="click_here_to_rate_it">Click here to RATE it</string>
+<!--    <string name="click_here_to_rate_it">Click here to RATE it</string>-->
+    <string name="click_here_to_rate_it">Rate on PlayStore</string>
     <string name="rateus_description">We hope this app turns useful to you and in case give us a 5 star and a positive review on Google Play, it truly helps, thank you.!</string>
     <string name="rate_us">Rate Us</string>
     <string name="give_5_stars_on_play_store_if_you_love_it">If you love it, give 5 stars on Play Store!</string>

@@ -30,6 +30,6 @@ public class DoRemoteJob {
     }
 
     private void PlayStore_RateUs(Context context) {
-        new PlayStore_RateUs(context, 6, true); // true = Material, false = Custom
+        new PlayStore_RateUs(context, 2, true); // true = Material, false = Custom
     }
 }
