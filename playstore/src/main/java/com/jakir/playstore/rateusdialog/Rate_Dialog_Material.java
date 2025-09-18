@@ -4,15 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.jakir.playstore.R;
-import com.jakir.playstore.tryourapps.AppOpenUtil;
+import com.jakir.playstore.AppOpenUtil;
 
 //
 // Created by JAKIR HOSSAIN on 8/6/2025.
@@ -39,9 +39,9 @@ public class Rate_Dialog_Material {
         s4.setOnClickListener(v -> openPlayStore(dialog, context));
         s5.setOnClickListener(v -> openPlayStore(dialog, context));
 
-        TextView rateText = view.findViewById(R.id.rate_txt_btn);
+        Button rateText = view.findViewById(R.id.rate_txt_btn);
         rateText.setOnClickListener(v -> openPlayStore(dialog, context));
-        TextView remindLaterBtn = view.findViewById(R.id.btnRemindLater);
+        Button remindLaterBtn = view.findViewById(R.id.btnRemindLater);
         remindLaterBtn.setOnClickListener(v -> dialog.dismiss());
 
         // Increment app open count to avoid showing the dialog again

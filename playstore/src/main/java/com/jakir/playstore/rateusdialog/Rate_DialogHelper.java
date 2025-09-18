@@ -7,8 +7,8 @@ package com.jakir.playstore.rateusdialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.jakir.playstore.rateusdialog.extraclass.CheckInternet;
-import com.jakir.playstore.tryourapps.AppOpenUtil;
+import com.jakir.playstore.extraclass.CheckInternet;
+import com.jakir.playstore.AppOpenUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

@@ -18,7 +18,7 @@
 
         <RelativeLayout
             android:layout_width="40dp"
-            android:layout_height="5dp"
+            android:layout_height="4dp"
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
             android:background="@drawable/rounded_bg_gray" />

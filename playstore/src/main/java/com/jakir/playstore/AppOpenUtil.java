@@ -1,4 +1,4 @@
-package com.jakir.playstore.tryourapps;
+package com.jakir.playstore;
 
 import static android.content.Context.MODE_PRIVATE;
 

@@ -2,15 +2,21 @@ package com.jakir.playstore.tryourapps;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,6 +54,32 @@ public class TryOurAppsBottomSheet extends BottomSheetDialogFragment {
         close.setOnClickListener(v -> dismiss());
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // Make BottomSheet flow over navigation bar
+        Window window = getDialog().getWindow();
+        if (window != null) {
+            // Transparent nav bar
+            window.setNavigationBarColor(Color.TRANSPARENT);
+
+            // Light icons or dark icons depending on theme
+            WindowInsetsControllerCompat insetsController = new WindowInsetsControllerCompat(window, window.getDecorView());
+            insetsController.setAppearanceLightNavigationBars(true);
+        }
+
+        // Apply padding for system bars
+        View sheet = getDialog().findViewById(com.google.android.material.R.id.design_bottom_sheet);
+        if (sheet != null) {
+            ViewCompat.setOnApplyWindowInsetsListener(sheet, (v, insets) -> {
+                Insets sysBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                v.setPadding(0, 0, 0, sysBars.bottom); // keep gesture nav space
+                return insets;
+            });
+        }
+    }
+
     private static class AppListAdapter extends RecyclerView.Adapter<AppListAdapter.AppViewHolder> {
         private final Context context;
         private final List<Appinfo> appList;
@@ -69,20 +101,21 @@ public class TryOurAppsBottomSheet extends BottomSheetDialogFragment {
             Appinfo app = appList.get(position);
             holder.appName.setText(app.getAppName());
             Glide.with(context).load(app.getAppIcon()).into(holder.appIcon);
-            holder.itemView.setOnClickListener(v -> context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(app.getPackageName()))));
+
+            holder.itemView.setOnClickListener(v -> {
+                try {
+                    // First try Play Store app
+                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + app.getPackageName())));
+                } catch (android.content.ActivityNotFoundException e) {
+                    // Fallback: open in browser
+                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + app.getPackageName())));
+                }
+            });
         }
 
         @Override
         public int getItemCount() {
             return appList.size();
-        }
-
-        private void openApp(String packageName) {
-/*            PackageManager packageManager = context.getPackageManager();
-            Intent intent = packageManager.getLaunchIntentForPackage(packageName);
-            if (intent != null) {
-                context.startActivity(intent);
-            }*/
         }
 
         static class AppViewHolder extends RecyclerView.ViewHolder {

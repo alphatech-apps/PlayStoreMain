@@ -1,4 +1,4 @@
-package com.jakir.playstore.rateusdialog.extraclass;
+package com.jakir.playstore.extraclass;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -14,5 +14,8 @@ public class CheckInternet {
         if ((wificonn != null && wificonn.isConnected()) || (mobileconn != null && mobileconn.isConnected())) {
             return true;
         } else {
-            return false;}}
+            return false;
+        }
+    }
+
 }

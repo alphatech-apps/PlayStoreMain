@@ -3,10 +3,12 @@ package com.jakir.playstore.tryourapps;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import com.jakir.playstore.AppOpenUtil;
+import com.jakir.playstore.extraclass.CheckInternet;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -23,7 +25,7 @@ import java.util.List;
 public class TryOurAppHelper {
     public void tryOurOtherAppsLoad(Context context, String developerName, int openCountWant) {
         int openCount = AppOpenUtil.getCountAppOpen(context);
-        if (openCount % openCountWant == 0 && new CheckInternet().isConnected(context)) {
+        if (openCount % openCountWant == 0 && new com.jakir.playstore.extraclass.CheckInternet().isConnected(context)) {
             loadDataFromHtml(context, developerName);
         }
     }
