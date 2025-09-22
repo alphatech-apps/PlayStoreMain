@@ -11,12 +11,9 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -60,24 +57,7 @@ public class TryOurAppsBottomSheet extends BottomSheetDialogFragment {
 
         // Make BottomSheet flow over navigation bar
         Window window = getDialog().getWindow();
-        if (window != null) {
-            // Transparent nav bar
-            window.setNavigationBarColor(Color.TRANSPARENT);
-
-            // Light icons or dark icons depending on theme
-            WindowInsetsControllerCompat insetsController = new WindowInsetsControllerCompat(window, window.getDecorView());
-            insetsController.setAppearanceLightNavigationBars(true);
-        }
-
-        // Apply padding for system bars
-        View sheet = getDialog().findViewById(com.google.android.material.R.id.design_bottom_sheet);
-        if (sheet != null) {
-            ViewCompat.setOnApplyWindowInsetsListener(sheet, (v, insets) -> {
-                Insets sysBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-                v.setPadding(0, 0, 0, sysBars.bottom); // keep gesture nav space
-                return insets;
-            });
-        }
+        if (window != null) window.setNavigationBarColor(Color.TRANSPARENT);
     }
 
     private static class AppListAdapter extends RecyclerView.Adapter<AppListAdapter.AppViewHolder> {
@@ -103,13 +83,7 @@ public class TryOurAppsBottomSheet extends BottomSheetDialogFragment {
             Glide.with(context).load(app.getAppIcon()).into(holder.appIcon);
 
             holder.itemView.setOnClickListener(v -> {
-                try {
-                    // First try Play Store app
-                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + app.getPackageName())));
-                } catch (android.content.ActivityNotFoundException e) {
-                    // Fallback: open in browser
-                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + app.getPackageName())));
-                }
+                 context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(app.getPackageName())));
             });
         }
 

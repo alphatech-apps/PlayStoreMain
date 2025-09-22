@@ -83,11 +83,6 @@ public class TryOurAppHelper {
     }
 
     public boolean shouldShowTryAppDialog(Activity activity, int openCountWant) {
- /*   int openCount = Util.getCountAppOpen(activity);
-      if (openCount % 5 == 0 && new CheckInternet().isConnected(activity) {
-            return true;
-        } else return false;
-        */
         return AppOpenUtil.getCountAppOpen(activity) % openCountWant == 0 && new CheckInternet().isConnected(activity);
     }
 }
